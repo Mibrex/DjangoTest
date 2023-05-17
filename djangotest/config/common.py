@@ -21,22 +21,28 @@ class Common(Configuration):
         'rest_framework',            # utilities for rest apis
         'rest_framework.authtoken',  # token authentication
         'django_filters',            # for filtering rest endpoints
+        'django_extensions',         # useful utilities for django
+        'corsheaders',               # for handling cross origin requests
 
         # Your apps
         'djangotest.users',
         'djangotest.catalogue',
+
     )
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
     MIDDLEWARE = (
         'django.middleware.security.SecurityMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
+        'corsheaders.middleware.CorsMiddleware',
         'django.middleware.common.CommonMiddleware',
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
     )
+
+    CORS_ALLOW_ALL_ORIGINS = True
 
     ALLOWED_HOSTS = ["*"]
     ROOT_URLCONF = 'djangotest.urls'
@@ -47,7 +53,7 @@ class Common(Configuration):
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
     ADMINS = (
-        ('Author', 'andrei@djangocoders.com'),
+        ('Author', 'contact@djangocoders.com'),
     )
 
     # Postgres
@@ -192,7 +198,7 @@ class Common(Configuration):
             'rest_framework.renderers.BrowsableAPIRenderer',
         ),
         'DEFAULT_PERMISSION_CLASSES': [
-            #'rest_framework.permissions.IsAuthenticated',
+            # 'rest_framework.permissions.IsAuthenticated',
         ],
         'DEFAULT_AUTHENTICATION_CLASSES': (
             'rest_framework.authentication.SessionAuthentication',

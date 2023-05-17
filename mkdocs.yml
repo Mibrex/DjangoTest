@@ -1,8 +1,8 @@
 site_name: djangotest
 site_description: Its all about a Weissman score > 5.0
-repo_url: https://github.com/The owner of the repository. Either your github username or organization name./djangotest
+repo_url: https://github.com/mibrex/djangotest
 site_dir: site
-copyright: Copyright &copy; 2020, <a href="https://github.com/The owner of the repository. Either your github username or organization name.">The owner of the repository. Either your github username or organization name.</a>.
+copyright: Copyright &copy; 2020, <a href="https://github.com/mibrex">mibrex</a>.
 dev_addr: 0.0.0.0:8001
 
 nav:
